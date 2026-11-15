@@ -6,144 +6,214 @@
   <meta name="theme-color" content="#059669" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>KaamWala — Verified Home Services</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #059669; --primary-dark: #064e3b; --primary-light: #ecfdf5;
-      --gold: #f59e0b; --dark: #0f172a; --muted: #64748b;
-      --bg: #f1f5f9; --border: #e2e8f0; --danger: #dc2626;
-      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -4px rgba(15, 23, 42, 0.04);
+      --primary: #059669;
+      --primary-dark: #064e3b;
+      --primary-light: #ecfdf5;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --bg: #f1f5f9;
+      --border: #e2e8f0;
+      --danger: #dc2626;
+      --shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.08);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
-    body { background: linear-gradient(135deg, #cbd5e1, #94a3b8); color: var(--dark); display: flex; justify-content: center; min-height: 100vh; }
-
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background: #cbd5e1;
+      color: var(--dark);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
     .phone-shell {
-      width: 100%; max-width: 440px; min-height: 100vh; background: var(--bg);
-      position: relative; padding-bottom: 88px; box-shadow: 0 25px 70px rgba(15,23,42,0.35); overflow-x: hidden;
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      background: var(--bg);
+      position: relative;
+      padding-bottom: 88px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+      overflow-x: hidden;
     }
-
-    /* Hero */
     .hero {
       background: linear-gradient(155deg, rgba(6,78,59,0.95), rgba(15,23,42,0.93)),
                   url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80') center/cover;
-      color: #fff; padding: 14px 16px 20px; border-bottom-left-radius: 26px; border-bottom-right-radius: 26px;
-      box-shadow: 0 10px 25px rgba(6,78,59,0.25);
+      color: #fff;
+      padding: 14px 16px 20px;
+      border-bottom-left-radius: 26px;
+      border-bottom-right-radius: 26px;
     }
-    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 6px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 6px;
+    }
     .brand-wrap { display: flex; align-items: center; gap: 9px; cursor: pointer; }
     .brand-logo {
       width: 36px; height: 36px; border-radius: 12px;
       background: linear-gradient(135deg, #34d399, #059669);
-      display: flex; align-items: center; justify-content: center; font-size: 19px;
-      box-shadow: 0 4px 14px rgba(16,185,129,0.45); user-select: none;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 19px; user-select: none;
     }
-    .brand-name { font-size: 17px; font-weight: 800; letter-spacing: -0.4px; }
+    .brand-name { font-size: 17px; font-weight: 800; }
     .brand-tag { font-size: 10px; color: #a7f3d0; display: block; font-weight: 600; }
     .top-actions { display: flex; gap: 5px; align-items: center; }
     .pill-btn {
-      background: rgba(255,255,255,0.14); backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.22); color: #fff;
-      padding: 5px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; cursor: pointer;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff; padding: 5px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; cursor: pointer;
     }
     .icon-btn {
-      width: 31px; height: 31px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.14); color: #fff; font-size: 14px; cursor: pointer;
+      width: 31px; height: 31px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.16);
+      color: #fff; font-size: 14px; cursor: pointer;
     }
-    .hero-title { font-size: 20px; font-weight: 800; line-height: 1.28; margin-bottom: 6px; letter-spacing: -0.3px; }
-    .hero-stats { display: flex; gap: 7px; margin-bottom: 12px; flex-wrap: wrap; }
-    .hero-stat { font-size: 10.5px; font-weight: 700; color: #ecfdf5; background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 8px; }
-
+    .hero-title { font-size: 19px; font-weight: 800; line-height: 1.28; margin-bottom: 6px; }
+    .hero-stats { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .hero-stat {
+      font-size: 10.5px; font-weight: 700; color: #ecfdf5;
+      background: rgba(255,255,255,0.13); padding: 3px 8px; border-radius: 8px;
+    }
     .search-box {
-      display: flex; align-items: center; gap: 8px; background: #fff;
-      border-radius: 15px; padding: 10px 13px; box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      display: flex; align-items: center; gap: 8px;
+      background: #fff; border-radius: 14px; padding: 10px 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.16);
     }
-    .search-box input { border: none; outline: none; width: 100%; font-size: 13px; font-weight: 500; color: var(--dark); background: transparent; padding: 0; }
-
+    .search-box input {
+      border: none; outline: none; width: 100%;
+      font-size: 13px; color: var(--dark); background: transparent; padding: 0;
+    }
     .ai-box {
-      margin: 11px 16px 0; background: linear-gradient(135deg, #eef2ff, #ecfdf5);
-      border: 1.5px solid #6ee7b7; border-radius: 15px; padding: 11px 13px; box-shadow: var(--shadow);
+      margin: 11px 16px 0; background: #ecfdf5;
+      border: 1.5px solid #6ee7b7; border-radius: 14px; padding: 11px 12px;
     }
     .reminder-bar {
-      margin: 11px 16px 0; background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      margin: 11px 16px 0; background: #fffbeb;
       border: 1px solid #fcd34d; border-radius: 14px; padding: 9px 12px;
       display: flex; justify-content: space-between; align-items: center; gap: 8px;
     }
     .promo-strip {
       margin: 10px 16px 0; background: linear-gradient(135deg, #065f46, #047857);
       color: #fff; border-radius: 16px; padding: 11px 14px;
-      display: flex; justify-content: space-between; align-items: center; box-shadow: 0 6px 18px rgba(5,150,105,0.22);
+      display: flex; justify-content: space-between; align-items: center;
     }
-    .promo-code { background: #fef3c7; color: #92400e; font-weight: 800; font-size: 11px; padding: 5px 9px; border-radius: 8px; border: 1px dashed #d97706; cursor: pointer; }
-
+    .promo-code {
+      background: #fef3c7; color: #92400e; font-weight: 800; font-size: 11px;
+      padding: 5px 9px; border-radius: 8px; border: 1px dashed #d97706; cursor: pointer;
+    }
     .cat-row { display: flex; gap: 7px; overflow-x: auto; padding: 12px 16px 2px; scrollbar-width: none; }
     .cat-row::-webkit-scrollbar { display: none; }
     .cat-chip {
-      flex-shrink: 0; background: #fff; border: 1.5px solid var(--border); padding: 7px 12px;
-      border-radius: 22px; font-size: 11.5px; font-weight: 700; color: #475569; cursor: pointer; transition: 0.15s;
+      flex-shrink: 0; background: #fff; border: 1.5px solid var(--border);
+      padding: 7px 12px; border-radius: 22px; font-size: 11.5px;
+      font-weight: 700; color: #475569; cursor: pointer;
     }
-    .cat-chip.active { background: var(--dark); border-color: var(--dark); color: #fff; box-shadow: 0 4px 12px rgba(15,23,42,0.18); }
+    .cat-chip.active { background: var(--dark); border-color: var(--dark); color: #fff; }
     .cat-chip.pink-active { background: #be185d; border-color: #be185d; color: #fff; }
 
     .section { padding: 13px 16px 4px; }
     .sec-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .sec-title { font-size: 15px; font-weight: 800; color: var(--dark); letter-spacing: -0.2px; }
+    .sec-title { font-size: 15px; font-weight: 800; color: var(--dark); }
     .sec-link { font-size: 11px; font-weight: 700; color: var(--primary); cursor: pointer; }
 
     .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 11px; }
     .svc-card {
-      background: #fff; border-radius: 18px; overflow: hidden;
-      border: 1px solid rgba(226,232,240,0.9); cursor: pointer;
-      box-shadow: var(--shadow); transition: transform 0.18s ease;
+      background: #fff; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border); cursor: pointer; box-shadow: var(--shadow);
     }
-    .svc-card:active { transform: scale(0.96); }
-    .svc-img-wrap { position: relative; height: 106px; background: #e2e8f0; overflow: hidden; }
-    .svc-img-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.68) 0%, rgba(15,23,42,0) 58%); }
-    .svc-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
-    .svc-card:hover .svc-img-wrap img { transform: scale(1.05); }
-    .svc-badge { position: absolute; top: 8px; left: 8px; z-index: 2; background: rgba(15,23,42,0.76); backdrop-filter: blur(6px); color: #fff; font-size: 9.5px; font-weight: 700; padding: 3px 7px; border-radius: 8px; }
-    .svc-eta { position: absolute; bottom: 7px; right: 7px; z-index: 2; background: rgba(236,253,245,0.95); color: #065f46; font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 7px; }
-    .svc-body { padding: 10px 11px 11px; }
+    .svc-img-wrap { position: relative; height: 102px; background: #cbd5e1; overflow: hidden; }
+    .svc-img-wrap::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.65) 0%, transparent 60%);
+    }
+    .svc-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .svc-badge {
+      position: absolute; top: 7px; left: 7px; z-index: 2;
+      background: rgba(15,23,42,0.78); color: #fff;
+      font-size: 9.5px; font-weight: 700; padding: 3px 7px; border-radius: 7px;
+    }
+    .svc-eta {
+      position: absolute; bottom: 6px; right: 6px; z-index: 2;
+      background: #ecfdf5; color: #065f46; font-size: 9.5px;
+      font-weight: 800; padding: 2px 6px; border-radius: 6px;
+    }
+    .svc-body { padding: 9px 10px 10px; }
     .svc-name { font-size: 13px; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
-    .svc-desc { font-size: 10.5px; color: var(--muted); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .svc-desc {
+      font-size: 10.5px; color: var(--muted); margin-bottom: 8px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
     .svc-foot { display: flex; justify-content: space-between; align-items: center; }
     .svc-price { font-size: 12px; font-weight: 800; color: var(--primary); }
-    .svc-btn { font-size: 10.5px; font-weight: 800; color: #fff; background: linear-gradient(135deg,#10b981,#059669); padding: 4px 10px; border-radius: 8px; }
+    .svc-btn {
+      font-size: 10.5px; font-weight: 800; color: #fff;
+      background: var(--primary); padding: 4px 10px; border-radius: 8px;
+    }
 
     .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .action-tile { border-radius: 16px; padding: 12px; color: #fff; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; min-height: 92px; box-shadow: var(--shadow); }
-
-    .h-scroll { display: flex; gap: 11px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+    .action-tile {
+      border-radius: 16px; padding: 12px; color: #fff; cursor: pointer;
+      display: flex; flex-direction: column; justify-content: space-between; min-height: 90px;
+    }
+    .h-scroll { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
     .h-scroll::-webkit-scrollbar { display: none; }
-    .plan-card { flex-shrink: 0; width: 210px; background: linear-gradient(145deg,#0f172a,#1e293b); color: #fff; border-radius: 17px; padding: 13px; box-shadow: var(--shadow); }
-    .pro-card { flex-shrink: 0; width: 146px; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 11px; text-align: center; box-shadow: var(--shadow); }
-    .pro-avatar { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--primary); margin: 0 auto 6px; display: block; }
+    .plan-card {
+      flex-shrink: 0; width: 205px; background: linear-gradient(145deg,#0f172a,#1e293b);
+      color: #fff; border-radius: 16px; padding: 12px;
+    }
+    .pro-card {
+      flex-shrink: 0; width: 144px; background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 10px; text-align: center;
+    }
+    .pro-avatar {
+      width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--primary); margin: 0 auto 6px; display: block;
+    }
 
-    .card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 13px; margin-bottom: 10px; box-shadow: 0 2px 10px rgba(15,23,42,0.03); }
+    .card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 15px; padding: 13px; margin-bottom: 10px;
+    }
     label { display: block; font-size: 11.5px; font-weight: 700; color: #334155; margin: 9px 0 4px; }
     input, select, textarea {
       width: 100%; padding: 9px 11px; border: 1.5px solid var(--border);
-      border-radius: 11px; font-size: 13.5px; background: #f8fafc; color: var(--dark); outline: none;
+      border-radius: 10px; font-size: 13.5px; background: #f8fafc; color: var(--dark); outline: none;
     }
     input:focus, select:focus, textarea:focus { border-color: var(--primary); background: #fff; }
     textarea { min-height: 54px; resize: vertical; }
 
     .btn {
       width: 100%; border: none; padding: 11px 12px; border-radius: 12px;
-      font-size: 12.5px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+      font-size: 12.5px; font-weight: 800; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+      text-decoration: none;
     }
-    .btn-primary { background: linear-gradient(135deg,#10b981,#059669); color: #fff; box-shadow: 0 4px 12px rgba(5,150,105,0.25); }
+    .btn-primary { background: linear-gradient(135deg,#10b981,#059669); color: #fff; }
     .btn-dark { background: var(--dark); color: #fff; }
     .btn-outline { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
     .btn-danger { background: #fee2e2; color: var(--danger); }
     .btn-warn { background: #fef3c7; color: #92400e; }
     .btn-sm { padding: 7px 10px; font-size: 11px; border-radius: 9px; }
 
-    .subtabs { display: flex; gap: 6px; margin-bottom: 12px; background: #e2e8f0; padding: 4px; border-radius: 13px; }
-    .subtab { flex: 1; border: none; background: transparent; padding: 7px 4px; border-radius: 10px; font-size: 11.5px; font-weight: 800; color: #475569; cursor: pointer; }
-    .subtab.active { background: #fff; color: var(--primary); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .subtabs { display: flex; gap: 6px; margin-bottom: 12px; background: #e2e8f0; padding: 4px; border-radius: 12px; }
+    .subtab {
+      flex: 1; border: none; background: transparent; padding: 7px 4px;
+      border-radius: 9px; font-size: 11.5px; font-weight: 800; color: #475569; cursor: pointer;
+    }
+    .subtab.active { background: #fff; color: var(--primary); }
 
-    .radar-box { background: linear-gradient(135deg,#064e3b,#0f172a); border-radius: 13px; padding: 10px 12px; color: #fff; margin: 8px 0; }
+    .radar-box { background: linear-gradient(135deg,#064e3b,#0f172a); border-radius: 12px; padding: 10px 12px; color: #fff; margin: 8px 0; }
     .radar-track { height: 4px; background: rgba(255,255,255,0.2); border-radius: 4px; margin: 10px 0 4px; position: relative; }
     .radar-fill { height: 100%; width: 65%; background: #34d399; border-radius: 4px; }
     .radar-pin { position: absolute; top: -11px; left: 62%; font-size: 16px; animation: movePin 2.2s ease-in-out infinite alternate; }
@@ -152,7 +222,11 @@
     .stepper { display: flex; justify-content: space-between; margin: 10px 0 6px; position: relative; }
     .stepper::before { content: ""; position: absolute; top: 10px; left: 8%; right: 8%; height: 2px; background: #e2e8f0; }
     .step-item { position: relative; z-index: 1; text-align: center; flex: 1; }
-    .step-dot { width: 20px; height: 20px; border-radius: 50%; margin: 0 auto 3px; background: #e2e8f0; color: #64748b; font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .step-dot {
+      width: 20px; height: 20px; border-radius: 50%; margin: 0 auto 3px;
+      background: #e2e8f0; color: #64748b; font-size: 10px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
     .step-item.done .step-dot { background: var(--primary); color: #fff; }
     .step-lbl { font-size: 9px; font-weight: 700; color: var(--muted); }
     .step-item.done .step-lbl { color: var(--primary); }
@@ -164,11 +238,11 @@
     .pill-completed { background: #d1fae5; color: #065f46; }
     .pill-urgent { background: #fee2e2; color: #dc2626; }
 
-    .wallet-hero { background: linear-gradient(135deg,#0f172a,#1e293b); color: #fff; border-radius: 17px; padding: 14px; margin-bottom: 12px; }
+    .wallet-hero { background: linear-gradient(135deg,#0f172a,#1e293b); color: #fff; border-radius: 16px; padding: 14px; margin-bottom: 12px; }
     .wallet-bal { font-size: 24px; font-weight: 900; color: #34d399; }
 
     .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; margin-bottom: 12px; }
-    .kpi-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 11px; box-shadow: 0 2px 8px rgba(15,23,42,0.03); }
+    .kpi-card { background: #fff; border: 1px solid var(--border); border-radius: 13px; padding: 11px; }
     .kpi-val { font-size: 17px; font-weight: 900; color: var(--primary); }
     .kpi-lbl { font-size: 10.5px; color: var(--muted); font-weight: 700; }
 
@@ -176,44 +250,71 @@
     .heat-track { height: 8px; background: #e2e8f0; border-radius: 6px; overflow: hidden; margin-top: 3px; }
     .heat-fill { height: 100%; background: linear-gradient(90deg, #10b981, #f59e0b); border-radius: 6px; }
 
-    .chat-box { max-height: 220px; overflow-y: auto; background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 10px; margin-bottom: 8px; display: flex; flex-direction: column; gap: 6px; }
+    .chat-box {
+      max-height: 220px; overflow-y: auto; background: #f8fafc; border: 1px solid var(--border);
+      border-radius: 12px; padding: 10px; margin-bottom: 8px; display: flex; flex-direction: column; gap: 6px;
+    }
     .chat-msg { max-width: 82%; padding: 7px 10px; border-radius: 12px; font-size: 12px; line-height: 1.4; }
     .chat-me { align-self: flex-end; background: var(--primary); color: #fff; border-bottom-right-radius: 3px; }
     .chat-them { align-self: flex-start; background: #fff; border: 1px solid var(--border); color: var(--dark); border-bottom-left-radius: 3px; }
 
     .bottom-nav {
-      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 440px;
-      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-top: 1px solid var(--border);
-      display: flex; z-index: 40; padding-bottom: env(safe-area-inset-bottom);
+      position: fixed; bottom: 0; left: 0; right: 0; margin: 0 auto;
+      width: 100%; max-width: 440px;
+      background: #ffffff; border-top: 1px solid var(--border);
+      display: flex; z-index: 40;
+      padding-bottom: env(safe-area-inset-bottom);
     }
-    .nav-item { flex: 1; border: none; background: none; padding: 8px 4px 10px; font-size: 10.5px; font-weight: 700; color: var(--muted); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .nav-item {
+      flex: 1; border: none; background: none; padding: 8px 4px 10px;
+      font-size: 10.5px; font-weight: 700; color: var(--muted); cursor: pointer;
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
     .nav-item.active { color: var(--primary); }
     .nav-ico { font-size: 18px; }
 
-    .overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.62); backdrop-filter: blur(4px); z-index: 80; display: flex; align-items: flex-end; justify-content: center; }
+    .overlay {
+      position: fixed; inset: 0; background: rgba(15,23,42,0.62);
+      z-index: 80; display: flex; align-items: flex-end; justify-content: center;
+    }
     .overlay.center { align-items: center; padding: 14px; }
     .overlay.hidden { display: none; }
-    .sheet { width: 100%; max-width: 440px; max-height: 92vh; overflow-y: auto; background: #fff; border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 16px 16px 24px; }
-    .modal-box { width: 100%; max-width: 395px; max-height: 88vh; overflow-y: auto; background: #fff; border-radius: 20px; padding: 16px; }
-
+    .sheet {
+      width: 100%; max-width: 440px; max-height: 92vh; overflow-y: auto;
+      background: #fff; border-top-left-radius: 24px; border-top-right-radius: 24px; padding: 16px 16px 24px;
+    }
+    .modal-box {
+      width: 100%; max-width: 395px; max-height: 88vh; overflow-y: auto;
+      background: #fff; border-radius: 20px; padding: 16px;
+    }
     .slot-row { display: flex; gap: 6px; margin-top: 5px; }
-    .slot-chip { flex: 1; text-align: center; padding: 7px 4px; border-radius: 10px; border: 1.5px solid var(--border); font-size: 11px; font-weight: 700; cursor: pointer; background: #f8fafc; }
+    .slot-chip {
+      flex: 1; text-align: center; padding: 7px 4px; border-radius: 10px;
+      border: 1.5px solid var(--border); font-size: 11px; font-weight: 700; cursor: pointer; background: #f8fafc;
+    }
     .slot-chip.active { border-color: var(--primary); background: var(--primary-light); color: var(--primary-dark); }
 
     .rate-box { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 9px; margin-bottom: 8px; }
     .rate-row { display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0; border-bottom: 1px dashed #e2e8f0; }
     .rate-row:last-child { border-bottom: none; }
-    .otp-box { background: #fef3c7; border: 1.5px dashed #d97706; border-radius: 10px; padding: 6px 10px; margin-top: 7px; display: flex; justify-content: space-between; align-items: center; }
-    .warranty-cert { border: 2px solid #059669; border-radius: 16px; padding: 16px; background: linear-gradient(180deg, #ecfdf5, #fff); text-align: center; }
+    .otp-box {
+      background: #fef3c7; border: 1.5px dashed #d97706; border-radius: 10px;
+      padding: 6px 10px; margin-top: 7px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .warranty-cert { border: 2px solid #059669; border-radius: 16px; padding: 16px; background: #ecfdf5; text-align: center; }
 
-    .toast { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); background: var(--dark); color: #fff; padding: 9px 14px; border-radius: 12px; font-size: 12px; font-weight: 700; z-index: 120; max-width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+    .toast {
+      position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+      background: var(--dark); color: #fff; padding: 9px 14px; border-radius: 12px;
+      font-size: 12px; font-weight: 700; z-index: 120; max-width: 90%; text-align: center;
+    }
     .hidden { display: none !important; }
     .meta { font-size: 11.5px; color: #475569; line-height: 1.45; }
 
     @media print {
       body { background: #fff !important; }
       .phone-shell, .bottom-nav, .toast { display: none !important; }
-      #warrantyModal { position: static !important; display: block !important; background: #fff !important; backdrop-filter: none !important; padding: 0 !important; }
+      #warrantyModal { position: static !important; display: block !important; background: #fff !important; padding: 0 !important; }
       #warrantyModal .modal-box { max-width: 100% !important; max-height: none !important; box-shadow: none !important; }
       .no-print { display: none !important; }
     }
@@ -224,7 +325,7 @@
 <div class="phone-shell">
   <div id="toast" class="toast hidden"></div>
 
-  <!-- ================= TAB 1: HOME ================= -->
+  <!-- TAB 1: HOME -->
   <div id="view-home">
     <div class="hero">
       <div class="topbar">
@@ -268,7 +369,9 @@
     <div class="promo-strip">
       <div>
         <div style="font-size:12px; font-weight:800;" id="tPromoTitle">Pehle Order par Rs. 200 OFF! 🎉</div>
-        <div style="font-size:10.5px; opacity:0.9;"><span id="tCreditPrefix">Referral Credit:</span> <strong id="custCreditLbl">Rs. 0</strong></div>
+        <div style="font-size:10.5px; opacity:0.9;">
+          <span id="tCreditPrefix">Referral Credit:</span> <strong id="custCreditLbl">Rs. 0</strong>
+        </div>
       </div>
       <div class="promo-code" onclick="copyCode('FIRST200')">FIRST200</div>
     </div>
@@ -285,7 +388,7 @@
     <div class="section">
       <div class="sec-head">
         <div class="sec-title" id="tSecServices">Services & Hunar</div>
-        <div class="sec-link" onclick="openBookingSheet(SERVICES[0].id)" id="tQuickBook">Quick Book →</div>
+        <div class="sec-link" onclick="openBookingSheet('ac')" id="tQuickBook">Quick Book →</div>
       </div>
       <div class="services-grid" id="servicesGrid"></div>
     </div>
@@ -339,14 +442,16 @@
     </div>
   </div>
 
-  <!-- ================= TAB 2: MY ORDERS ================= -->
+  <!-- TAB 2: MY ORDERS -->
   <div id="view-orders" class="hidden">
     <div class="hero" style="padding-bottom:14px;">
       <div class="topbar" style="margin-bottom:4px;">
         <div class="brand-name" id="tOrdersHdr">📦 Meri Bookings</div>
         <button class="pill-btn" onclick="switchView('home')">+ New Order</button>
       </div>
-      <div class="hero-stats" style="margin-bottom:0;"><span class="hero-stat" id="tOrdersSub">Live Radar, In-App Chat, Custom Bids & Warranty Cards</span></div>
+      <div class="hero-stats" style="margin-bottom:0;">
+        <span class="hero-stat" id="tOrdersSub">Live Radar, In-App Chat, Custom Bids & Warranty Cards</span>
+      </div>
     </div>
     <div class="section">
       <div id="activePlansList"></div>
@@ -355,7 +460,7 @@
     </div>
   </div>
 
-  <!-- ================= TAB 3: WORKER PARTNER APP ================= -->
+  <!-- TAB 3: WORKER PARTNER APP -->
   <div id="view-worker" class="hidden">
     <div class="hero" style="padding-bottom:14px;">
       <div class="topbar" style="margin-bottom:4px;">
@@ -374,12 +479,12 @@
     <div class="section">
       <div class="wallet-hero">
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-          <img id="activeWorkerAvatar" src="https://images.unsplash.com/photo-1603415526983-d7c7e6d62c98?auto=format&fit=crop&w=200&q=80"
-               onerror="this.style.display='none'"
+          <img id="activeWorkerAvatar" src="" onerror="imgErr(this)"
                style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid #34d399;" />
           <div style="flex:1;">
-            <select id="activeWorkerSelect" onchange="changeActiveWorker(this.value)" style="padding:4px 8px; font-size:12px; font-weight:800; background:#1e293b; color:#fff; border-color:#334155; margin-bottom:3px;"></select>
-            <div style="font-size:10.5px; color:#94a3b8;" id="wStatusText">CNIC Verified ✅ • 4.9 ★</div>
+            <select id="activeWorkerSelect" onchange="changeActiveWorker(this.value)"
+                    style="padding:4px 8px; font-size:12px; font-weight:800; background:#1e293b; color:#fff; border-color:#334155; margin-bottom:3px;"></select>
+            <div style="font-size:10.5px; color:#94a3b8;" id="wStatusText">CNIC Verified ✅</div>
           </div>
           <button onclick="playRingtone()" class="pill-btn">🔔 Test</button>
         </div>
@@ -423,7 +528,7 @@
     </div>
   </div>
 
-  <!-- ================= TAB 4: ADMIN COMMAND ================= -->
+  <!-- TAB 4: ADMIN COMMAND -->
   <div id="view-admin" class="hidden">
     <div class="hero" style="padding-bottom:14px;">
       <div class="topbar" style="margin-bottom:4px;">
@@ -433,7 +538,9 @@
           <button class="pill-btn" onclick="lockStaff()">🔒 Lock</button>
         </div>
       </div>
-      <div class="hero-stats" style="margin-bottom:0;"><span class="hero-stat">Heatmap, Workers, B2B & Approvals</span></div>
+      <div class="hero-stats" style="margin-bottom:0;">
+        <span class="hero-stat">Heatmap, Workers, B2B & Approvals</span>
+      </div>
     </div>
 
     <div class="section">
@@ -499,20 +606,21 @@
   <button class="nav-item" id="navAdminTab" onclick="openProtected('admin', this)"><span class="nav-ico">📊</span><span id="navAdmin">Admin</span></button>
 </div>
 
-<!-- ================= STAFF PIN GATE MODAL ================= -->
+<!-- STAFF PIN MODAL -->
 <div id="pinModal" class="overlay center hidden" onclick="if(event.target===this) closeModal('pinModal')">
   <div class="modal-box" style="text-align:center;">
     <div style="font-size:32px;">🔐</div>
     <h3 style="margin:6px 0 4px;">Staff / Admin Access</h3>
     <p class="meta" id="pinHintText">4-Digit Staff PIN enter karein (Default: <strong>1234</strong>)</p>
     <form id="pinForm" style="margin-top:10px;">
-      <input type="password" id="pinInput" inputmode="numeric" maxlength="6" placeholder="••••" style="text-align:center; font-size:20px; letter-spacing:6px; font-weight:800;" required />
+      <input type="password" id="pinInput" inputmode="numeric" maxlength="6" placeholder="••••"
+             style="text-align:center; font-size:20px; letter-spacing:6px; font-weight:800;" required />
       <button type="submit" class="btn btn-primary" style="margin-top:10px;">Unlock</button>
     </form>
   </div>
 </div>
 
-<!-- ================= BOOKING SHEET ================= -->
+<!-- BOOKING SHEET -->
 <div id="bookingSheet" class="overlay hidden" onclick="if(event.target===this) closeBookingSheet()">
   <div class="sheet">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:9px;">
@@ -520,7 +628,7 @@
       <button onclick="closeBookingSheet()" style="border:none; background:#f1f5f9; width:28px; height:28px; border-radius:50%; font-weight:800; cursor:pointer;">✕</button>
     </div>
     <div style="display:flex; gap:10px; align-items:center; background:#f8fafc; padding:9px; border-radius:12px; border:1px solid var(--border); margin-bottom:8px;">
-      <img id="sheetSvcImg" src="" style="width:56px; height:48px; border-radius:9px; object-fit:cover;" />
+      <img id="sheetSvcImg" src="" onerror="imgErr(this)" style="width:56px; height:48px; border-radius:9px; object-fit:cover;" />
       <div>
         <div style="font-size:12px; font-weight:800; color:var(--primary);" id="sheetSvcPrice">Visit Fee: Rs. 400</div>
         <div class="meta" style="font-size:10.5px;">7-Day Warranty • Transparent Rate Card</div>
@@ -547,8 +655,11 @@
       </div>
       <label>Society / Area</label>
       <select id="bArea">
-        <option>Bahria Town</option><option>DHA Phase 1-8</option><option>Gulberg / Model Town</option>
-        <option>Johar Town / Wapda Town</option><option>Cantt / City Center</option>
+        <option>Bahria Town</option>
+        <option>DHA Phase 1-8</option>
+        <option>Gulberg / Model Town</option>
+        <option>Johar Town / Wapda Town</option>
+        <option>Cantt / City Center</option>
       </select>
       <label>Aapka Naam</label><input type="text" id="bName" placeholder="Hamza Khan" required />
       <label>WhatsApp Number</label><input type="tel" id="bPhone" placeholder="0300-1234567" required />
@@ -585,14 +696,19 @@
   </div>
 </div>
 
-<!-- ================= MODALS ================= -->
+<!-- OTHER MODALS -->
 <div id="bigJobModal" class="overlay center hidden" onclick="if(event.target===this) closeModal('bigJobModal')">
   <div class="modal-box">
     <h3 style="margin-bottom:4px;">🔨 Big Job Post Karein</h3>
-    <p class="meta" style="margin-bottom:8px;">Solar, Paint, Woodwork — 3 workers ki bids payein:</p>
+    <p class="meta" style="margin-bottom:8px;">Solar, Paint, Woodwork — workers ki bids payein:</p>
     <form id="bigJobForm">
       <label>Category</label>
-      <select id="bjCat"><option>Solar Panel Setup (5kW/10kW)</option><option>Home Painting & Seepage</option><option>Carpenter Kitchen Cabinets</option><option>Full House Plumbing/Wiring</option></select>
+      <select id="bjCat">
+        <option>Solar Panel Setup (5kW/10kW)</option>
+        <option>Home Painting & Seepage</option>
+        <option>Carpenter Kitchen Cabinets</option>
+        <option>Full House Plumbing/Wiring</option>
+      </select>
       <label>Area</label><input type="text" id="bjArea" value="Bahria Town" required />
       <label>Detail</label><textarea id="bjDesc" placeholder="Kaam ki detail likhein..." required></textarea>
       <label>Budget (PKR)</label><input type="number" id="bjBudget" placeholder="25000" required />
@@ -669,7 +785,7 @@
       <span style="font-size:11.5px; font-weight:700;">🔐 Safety Start OTP:</span>
       <strong id="sucOtp" style="font-size:17px; letter-spacing:2px; color:#92400e;">0000</strong>
     </div>
-    <a id="sucWaLink" href="#" target="_blank" style="text-decoration:none;"><button class="btn btn-primary">📲 Admin ko WhatsApp Bhejein</button></a>
+    <a id="sucWaLink" href="#" target="_blank" class="btn btn-primary">📲 Admin ko WhatsApp Bhejein</a>
     <div id="sucPostActions">
       <button onclick="closeModal('successModal'); switchView('orders')" class="btn btn-dark" style="margin-top:7px;">📦 Live Tracking Dekhein</button>
     </div>
@@ -709,8 +825,13 @@
 </div>
 
 <script>
-  const STORE_KEY = "kaamwala_pro_master_v9";
-  const FALLBACK_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='240'><rect width='100%25' height='100%25' fill='%23065f46'/><text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-size='22'>KaamWala</text></svg>";
+  const STORE_KEY = "kaamwala_clean_v10";
+  const FALLBACK_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240'%3E%3Crect width='100%25' height='100%25' fill='%23065f46'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-size='22'%3EKaamWala%3C/text%3E%3C/svg%3E";
+
+  function imgErr(el) {
+    el.onerror = null;
+    el.src = FALLBACK_SVG;
+  }
 
   const SERVICES = [
     { id: "ac", cat: "repair", name: "AC & Cooling", nameUr: "اے سی اور کولنگ", desc: "Gas refill, master service, PCB", fee: 500, eta: "35 min", badge: "🔥 Popular", femaleSafe: false, img: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80", rates: [["Master Jet Service", "Rs. 2,000"], ["Gas Refill", "Rs. 3,800"], ["Capacitor Change", "Rs. 900"]] },
@@ -749,7 +870,7 @@
 
   const AI_RULES = [
     { keys: ["e1","e4","f0","ac","cool","gas","ice","split"], svc: "ac", title: "AC Sensor / Gas / Capacitor Issue", est: "Rs. 900 – Rs. 3,800", tip: "AC band kar dein aur stabilizer check karein." },
-    { keys: ["solar","panel","inverter","battery","watt"], svc: "solar", title: "Solar Panel Cleaning / Inverter Fault", est: "Rs. 1,000 – Rs. 2,500", tip: "Dust ki wajah se 25% bijli kam banti hai — pressure wash karwayein." },
+    { keys: ["solar","panel","inverter","battery","watt"], svc: "solar", title: "Solar Panel Cleaning / Inverter Fault", est: "Rs. 1,000 – Rs. 2,500", tip: "Dust se 25% bijli kam banti hai — pressure wash karwayein." },
     { keys: ["door","lock","wood","cabinet","hinge","carpenter","darwaza"], svc: "carp", title: "Carpenter / Door Lock Repair", est: "Rs. 500 – Rs. 1,500", tip: "Master carpenter locks & hinges sath le kar aayega." },
     { keys: ["paint","seepage","damp","wall","deewar","rang"], svc: "paint", title: "Wall Paint / Seepage Waterproofing", est: "Rs. 1,800 – Rs. 4,500", tip: "Dampness check karke chemical coat lagaya jayega." },
     { keys: ["salon","facial","wax","hair","makeup","beauty"], svc: "salon", title: "Female Salon at Home (Verified)", est: "Rs. 1,800 – Rs. 4,500", tip: "100% Female Beautician sealed kit ke saath aayegi." },
@@ -812,64 +933,4 @@
       {
         id: "KW-502", isDemo: true, service: "Solar & Inverter", fee: 600, expressFee: 0, promoDisc: 0, creditUsed: 0, total: 600, leadFeePaid: 0,
         express: false, femaleSafe: false, slot: "Standard (45 Min)", area: "Bahria Town", name: "Saad Tariq",
-        phone: "0321-5550192", address: "House 44, Sector C", gps: "31.3652, 74.1841",
-        note: "12 solar panels ka pressure wash karwana hai", photo: "", voice: "", beforePhoto: "", afterPhoto: "",
-        otp: "4829", parts: [], status: "pending", workerName: null, rating: 0, completedDate: null,
-        chat: [{ sender: "customer", text: "Assalam-o-Alaikum, chhat par pani ki pipeline hai.", time: "10:15 AM" }]
-      },
-      {
-        id: "KW-501", isDemo: true, service: "Electrician & UPS", fee: 400, expressFee: 0, promoDisc: 200, creditUsed: 0, total: 200, leadFeePaid: 50,
-        express: false, femaleSafe: false, slot: "Aaj Shaam 4-7 PM", area: "Gulberg / Model Town", name: "Hina Raza",
-        phone: "0333-4449812", address: "Street 2, Block K", gps: "31.5102, 74.3441",
-        note: "UPS changeover switch kharab hai", photo: "", voice: "", beforePhoto: "", afterPhoto: "",
-        otp: "7391", parts: [], status: "accepted", workerName: "Ustad Bilal Ahmed", rating: 0, completedDate: null,
-        chat: [
-          { sender: "customer", text: "Gate par aa kar bell baja dein.", time: "11:02 AM" },
-          { sender: "worker", text: "Ji bilkul, 10 minute mein pahunch raha hoon.", time: "11:04 AM" }
-        ]
-      }
-    ],
-    bigJobs: [
-      {
-        id: "BJ-11", isDemo: true, category: "Home Painting & Seepage", area: "DHA Phase 1-8", desc: "2 bedrooms aur TV lounge ka plastic emulsion paint",
-        budget: 18000, status: "open", acceptedBid: null,
-        bids: [{ worker: "Ustad Tariq Painters", amount: 16500, days: "3 Days", rating: "4.8" }]
-      }
-    ],
-    b2bLeads: [{ id: "B2B-1", biz: "City Care Pharmacy", phone: "0300-7766554", pkg: "Office Care — Rs. 8,000/mo", status: "Active" }],
-    toolLoans: [],
-    topUps: [{ id: "TP-11", worker: "Ustad Rashid Ali", method: "Easypaisa", amount: 500, tid: "8841209381", status: "pending" }]
-  };
-
-  let state = loadState();
-  let staffUnlocked = false;
-  let pendingUnlockTarget = "admin";
-  let pendingUnlockBtn = null;
-  let logoTaps = 0, logoTimer = null;
-
-  let activeService = SERVICES[0];
-  let chosenSlot = "Standard (45 Min)";
-  let appliedPromoCode = "";
-  let capturedGps = "Not pinned";
-  let uploadedPhoto = "";
-  let recordedVoice = "";
-  let mediaRecorder = null;
-  let voiceChunks = [];
-  let activePartsOrderId = null;
-  let activeChatOrderId = null;
-  let activeChatRole = "customer";
-  let activeChatQuickList = [];
-  let activeProofOrderId = null;
-  let activeProofType = "before";
-  let tempProofPhoto = "";
-
-  function loadState() {
-    try { const raw = localStorage.getItem(STORE_KEY); return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(DEFAULT_DATA)); }
-    catch { return JSON.parse(JSON.stringify(DEFAULT_DATA)); }
-  }
-  function saveState() {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
-    catch { toast("⚠️ Browser storage full hai — purana demo data reset karein."); }
-  }
-  function esc(s) { return String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"); }
-  function toast(ms
+        phone: "0321-5550192", address: "H
